@@ -1,0 +1,17 @@
+<h1>Pizzas Page</h1>
+
+<ul>
+<% @pizzas.each do |pizza| %>
+    <li><%= link_to pizza.name, pizza_path(pizza) %></li>
+<% end %>
+</ul>
+
+<%= form_tag pizzas_path, method: :get do %>
+    <%= submit_tag :'Sort by Price', name: :sorted %>
+<% end %>
+<br><br>
+<%= form_tag pizzas_path, method: :get do %>
+    Search term:
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag :'Search', name: nil %>
+<% end %>

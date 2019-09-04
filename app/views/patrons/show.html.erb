@@ -1,0 +1,7 @@
+<h1><%= @patron.name %></h1>
+<h3>Waiters:</h3>
+<ul>
+    <% @patron.waiters.each do |waiter| %>
+        <li><%= link_to waiter.name, waiter_path(waiter) %></li>
+    <% end %>
+</ul>

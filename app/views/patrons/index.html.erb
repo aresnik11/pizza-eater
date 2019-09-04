@@ -1,0 +1,7 @@
+<h1>Patrons Page</h1>
+
+<ul>
+<% @patrons.each do |patron| %>
+    <li><% link_to patron.name, patron_path(patron) %></li>
+<% end %>
+</ul>

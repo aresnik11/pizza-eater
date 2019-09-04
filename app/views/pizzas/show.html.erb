@@ -1,0 +1,15 @@
+<h1><%= @pizza.name %></h1>
+<h3>Cheese: <%= @pizza.cheese %></h3>
+<h3>Sauce: <%= @pizza.sauce %></h3>
+<h3>Topping 1: <%= @pizza.topping_one %></h3>
+<h3>Topping 2: <%= @pizza.topping_two %></h3>
+<h3>Price: <%= @pizza.price %></h3>
+<h3>Waiters:</h3>
+<ul>
+    <% @pizza.waiters.each do |waiter| %>
+        <li><%= link_to waiter.name, waiter_path(waiter) %></li>
+    <% end %>
+</ul>
+
+<br>
+<p><%= link_to "Delete Pizza", pizza_path(@pizza), method: :delete %></p>

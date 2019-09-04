@@ -1,0 +1,18 @@
+<h1>Create a New Pizza</h1>
+
+<% if flash[:messages] %>
+    <h3><%= flash[:messages] %></h3>
+<% end %>
+
+<%= form_for @pizza do |f| %>
+    Name:
+    <%= f.text_field :name %>
+    <%= f.collection_select :cheese, @cheeses, :to_s, :to_s, prompt: "Select a Cheese:" %>
+    Sauce:
+    <%= f.text_field :sauce %>
+    <%= f.collection_select :topping_one, @toppings, :to_s, :to_s, prompt: "Select a Topping:" %>
+    <%= f.collection_select :topping_two, @toppings, :to_s, :to_s, prompt: "Select a Topping:" %>
+    Price:
+    <%= f.number_field :price %>
+    <%= f.submit :Create %>
+<% end %>

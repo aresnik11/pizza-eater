@@ -1,0 +1,13 @@
+<h1><%= @waiter.name %></h1>
+<h3>Patrons:</h3>
+<ul>
+    <% @waiter.patrons.each do |patron| %>
+        <li><%= link_to patron.name, patron_path(patron) %></li>
+    <% end %>
+</ul>
+<h3>Pizzas:</h3>
+<ul>
+    <% @waiter.pizzas.each do |pizza| %>
+        <li><%= link_to pizza.name, pizza_path(pizza) %></li>
+    <% end %>
+</ul>

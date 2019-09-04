@@ -1,0 +1,7 @@
+<h1>Waiters Page</h1>
+
+<ul>
+<% @waiters.each do |waiter| %>
+    <li><%= link_to waiter.name, waiter_path(waiter) %></li>
+<% end %>
+</ul>
