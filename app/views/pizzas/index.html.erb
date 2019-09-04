@@ -9,7 +9,9 @@
 <%= form_tag pizzas_path, method: :get do %>
     <%= submit_tag :'Sort by Price', name: :sorted %>
 <% end %>
+
 <br><br>
+
 <%= form_tag pizzas_path, method: :get do %>
     Search term:
     <%= text_field_tag :search, params[:search] %>
